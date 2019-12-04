@@ -1,6 +1,6 @@
 package com.example.android.navigation
 
-
+import androidx.navigation.findNavController
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -19,8 +19,11 @@ class TitleFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
     val binding = DataBindingUtil.inflate<FragmentTitleBinding>(inflater,
             R.layout.fragment_title, container, false)
+
         //adding click handler to play button
-        binding.playButton.setOnClickListener{}
+        binding.playButton.setOnClickListener { view : View ->
+            view.findNavController().navigate(R.id.action_titleFragment_to_gameFragment)
+        }
         return binding.root
     }
 }
