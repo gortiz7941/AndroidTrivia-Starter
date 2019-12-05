@@ -60,17 +60,17 @@ class GameWonFragment : Fragment() {
     // override to inflate winner_menu
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.winner_menu, menu)
+        inflater.inflate(R.menu.winner_menu, menu)
         // check if the activity resolves
         if (null == getShareIntent().resolveActivity(activity!!.packageManager)) {
             // hide the menu item if it doesn't resolve
-            menu?.findItem(R.id.share)?.setVisible(false)
+            menu.findItem(R.id.share)?.setVisible(false)
         }
     }
 
     // Sharing from the Menu
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item!!.itemId) {
+        when (item.itemId) {
             R.id.share -> shareSuccess()
         }
         return super.onOptionsItemSelected(item)
